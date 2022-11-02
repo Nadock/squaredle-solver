@@ -9,12 +9,12 @@ class PrefixTreeNode:
     `PrefixTreeNode` is a single node in a prefix tree.
 
     `prefix` is the prefix up to this point for the node. For example, in the prefix
-    tree representing the word `"hello"` the third node would have a prefix of `"he"`.
+    tree representing the word `"hello"` the third node would have a prefix of `"e"`.
     The prefix of the first/root node is always the empty string, ie: `""`.
 
     `children` is the list of any child nodes from this node which continue to form
     words. For example, in the prefix tree representing the word `"hello"` the third
-    node would have one child, the node for the prefix `"hel"`.
+    node would have one child, the node for the prefix `"l"`.
 
     `is_word` indicates if this node in the prefix tree is the last node in a complete
     word. This is always true for leaf nodes but may also be true for nodes that form
@@ -38,7 +38,7 @@ class PrefixTreeNode:
         """
         return dataclasses.asdict(self)
 
-    def add_word(self, word: str, depth: int = 1):
+    def add_word(self, word: str, depth: int = 0):
         """
         Add a word to the prefix tree.
 
@@ -47,12 +47,12 @@ class PrefixTreeNode:
         """
         # If we're deeper than the word is long, mark this
         # node as a full word and stop recursing.
-        if depth > len(word):
+        if depth >= len(word):
             self.is_word = True
             return
 
         # Find child node with matching prefix
-        prefix = word[:depth]
+        prefix = word[depth]
         matched_node = None
         for child in self.children:
             if child.prefix == prefix:

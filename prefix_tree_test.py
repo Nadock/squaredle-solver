@@ -10,16 +10,16 @@ def test_build_prefix_tree__one_word():
                     "prefix": "h",
                     "children": [
                         {
-                            "prefix": "he",
+                            "prefix": "e",
                             "children": [
                                 {
-                                    "prefix": "hel",
+                                    "prefix": "l",
                                     "children": [
                                         {
-                                            "prefix": "hell",
+                                            "prefix": "l",
                                             "children": [
                                                 {
-                                                    "prefix": "hello",
+                                                    "prefix": "o",
                                                     "is_word": True,
                                                 }
                                             ],
@@ -48,16 +48,16 @@ def test_build_prefix_tree__two_disjoint_words():
                     "prefix": "h",
                     "children": [
                         {
-                            "prefix": "he",
+                            "prefix": "e",
                             "children": [
                                 {
-                                    "prefix": "hel",
+                                    "prefix": "l",
                                     "children": [
                                         {
-                                            "prefix": "hell",
+                                            "prefix": "l",
                                             "children": [
                                                 {
-                                                    "prefix": "hello",
+                                                    "prefix": "o",
                                                     "is_word": True,
                                                 }
                                             ],
@@ -72,16 +72,16 @@ def test_build_prefix_tree__two_disjoint_words():
                     "prefix": "w",
                     "children": [
                         {
-                            "prefix": "wo",
+                            "prefix": "o",
                             "children": [
                                 {
-                                    "prefix": "wor",
+                                    "prefix": "r",
                                     "children": [
                                         {
-                                            "prefix": "worl",
+                                            "prefix": "l",
                                             "children": [
                                                 {
-                                                    "prefix": "world",
+                                                    "prefix": "d",
                                                     "is_word": True,
                                                 }
                                             ],
@@ -110,19 +110,19 @@ def test_build_prefix_tree__two_overlapping_words():
                     "prefix": "a",
                     "children": [
                         {
-                            "prefix": "ab",
+                            "prefix": "b",
                             "children": [
                                 {
-                                    "prefix": "abj",
+                                    "prefix": "j",
                                     "children": [
                                         {
-                                            "prefix": "abje",
+                                            "prefix": "e",
                                             "children": [
                                                 {
-                                                    "prefix": "abjec",
+                                                    "prefix": "c",
                                                     "children": [
                                                         {
-                                                            "prefix": "abject",
+                                                            "prefix": "t",
                                                             "is_word": True,
                                                         }
                                                     ],
@@ -130,13 +130,13 @@ def test_build_prefix_tree__two_overlapping_words():
                                             ],
                                         },
                                         {
-                                            "prefix": "abju",
+                                            "prefix": "u",
                                             "children": [
                                                 {
-                                                    "prefix": "abjur",
+                                                    "prefix": "r",
                                                     "children": [
                                                         {
-                                                            "prefix": "abjure",
+                                                            "prefix": "e",
                                                             "is_word": True,
                                                         }
                                                     ],
@@ -167,17 +167,17 @@ def test_build_prefix_tree__plurals():
                     "prefix": "w",
                     "children": [
                         {
-                            "prefix": "wo",
+                            "prefix": "o",
                             "children": [
                                 {
-                                    "prefix": "wor",
+                                    "prefix": "r",
                                     "children": [
                                         {
-                                            "prefix": "word",
+                                            "prefix": "d",
                                             "is_word": True,
                                             "children": [
                                                 {
-                                                    "prefix": "words",
+                                                    "prefix": "s",
                                                     "is_word": True,
                                                 }
                                             ],
