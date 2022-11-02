@@ -1,4 +1,4 @@
-import prefix_tree
+from . import prefix_tree
 
 
 def test_build_prefix_tree__one_word():
