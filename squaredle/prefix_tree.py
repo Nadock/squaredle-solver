@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import dataclasses
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -65,6 +66,16 @@ class PrefixTreeNode:
 
         # Descend recursively until we've built out the tree structure for the entire word
         matched_node.add_word(word, depth + 1)
+
+    def get_child(self, prefix: str) -> Optional[PrefixTreeNode]:
+        """
+        Get a child node matching the supplied prefix, or `None` if there are no
+        matching nodes.
+        """
+        for child in self.children:
+            if child.prefix == prefix:
+                return child
+        return None
 
 
 def build_prefix_tree(words: list[str]) -> PrefixTreeNode:
