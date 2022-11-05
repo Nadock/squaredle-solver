@@ -40,3 +40,24 @@ valid words to reference when searching for Squardle words.
 
 The `./games/2022-11-01.txt` argument is a text file containing the Squardle board as
 newline separated rows of characters.
+
+## Loading Current Games
+
+Okay so fair warning, this section does cross the line into cheating IMO.
+
+The `:/load_current_games.py` script reads the Squaredle API and extracts the current
+available games — usually today and yesterdays games. It then writes out the game board
+to the `:/games` directory.
+
+The script also writes a corresponding `_words.txt` file which is the part that is kinda
+cheating. It contains a list of only the valid & bonus words for the corresponding game.
+You can use this file instead of the `words_alpha.txt` file to ensure 100% accuracy of
+the results.
+
+This script uses the `requests` library to read the API, which if you don't have already
+you can install yourself or run the script in the Pipenv environment via:
+
+```console
+pipenv install
+pipenv run ./load_current_games.py
+```
