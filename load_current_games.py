@@ -8,6 +8,7 @@ certainly break very quickly.
 """
 import base64
 import json
+import os
 import pathlib
 import sys
 
@@ -35,7 +36,9 @@ def decrypt_text(text: str) -> str:
 
 
 def load_puzzle_config() -> dict:
-    puzzle_js_response = requests.get(PUZZLE_CONFIG_URL)
+    puzzle_js_response = requests.get(
+        PUZZLE_CONFIG_URL, timeout=float(os.environ.get("SQUAREDLE_TIMEOUT", 10.0))
+    )
     puzzle_js_response.raise_for_status()
 
     puzzle_lines = []
